@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="col-6 max-auto test-center">
+    <div class="test-center" mt-5>
+      <img src="https://images5.alphacoders.com/905/905439.jpg"
+   class="img-fluid img-responsive" style="height: 200px;"/>
+    </div>
+  <form method="post">
+      {%csrf_token%}
+        <div class="test-center   mb-3 ">
+          <label for="exampleInputEmail1" class="form-label">Enter Name</label>
+          <input type="name" class="form-control" id="name" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="test-center   mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Email</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+
+        <div class="text-center   mb-3">
+          <label for="exampleInputPassword1" class="form-label">Amount</label>
+          <input type="amount" class="form-control" id="amount">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
+
+{%if payment %}
+<div class="test-center max-auto">
+<form action="/success" method="POST">
+  
+  <script 
+  src="https://checkout.razorpay.com/v1/checkout.js"
+  data-key="rzp_test_X7XVZBmzec6QDz"
+  data-amount="{{payment.amount}}"
+  data-currency="INR"
+  data-order_id="{{payment.id}}"
+  data-buttontext="Pay with Razorpay"
+  data-name="Coffee Crop"
+  data-description="Test Transcation"
+  data-image="https://example.com/your_logo.jpg"
+  data-prefill.name="Gaurav"
+  data-prefill.email="Gaurav.kumar@example.com"
+  data-prefill.contact="9999999999"
+  data-theme.color="#F37254"
+  ></script>
+<input type="hidden" custome="Hidden Element" name="hidden">
+</form>
+{%endif%}
+</div>
+
+
+{% endblock %}
+
