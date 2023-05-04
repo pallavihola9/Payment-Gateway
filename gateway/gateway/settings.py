@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'gateway.wsgi.application'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'pallu.raut995@gmail.com'
-EMAIL_HOST_PASSWORD = 'P@ssw0rd=pallu'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
 

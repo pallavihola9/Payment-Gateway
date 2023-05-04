@@ -40,7 +40,7 @@ def success(request):
          user.save()
          msg_plain=render_to_string('email.txt')
          msg_html=render_to_string('email.html')  
-         send_mail("Your Donation has been recived",msg_plain,settings.EMAIL_HOST_USER,['user.email'],html_message=msg_html)
+         send_mail("Your Donation has been recived",msg_plain,settings.EMAIL_HOST_USER,[user.email],html_message=msg_html)
            
         #  print(a)
     return render(request,"success.html")
