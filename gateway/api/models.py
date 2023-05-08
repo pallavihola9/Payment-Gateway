@@ -7,3 +7,4 @@ class Coffee(models.Model):
     email=models.EmailField(max_length=100)
     payment_id=models.CharField(max_length=100)
     paid=models.BooleanField(default=False)
+   
